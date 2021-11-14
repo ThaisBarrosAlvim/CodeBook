@@ -8,7 +8,7 @@ String.prototype.format = String.prototype.format = function () {
   return s;
 };
 
-const UserName = "Markinho";
+const UserName = "Markinhos";
 const UserPicture =
   "https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg";
 
@@ -24,14 +24,14 @@ function getUserImg() {
 // Like Button
 
 function LikeClick(param) {
-    console.log("Clicked on Like button");
-    ButtonClick(param);
+  console.log("Clicked on Like button");
+  ButtonClick(param);
 }
 
 function ButtonClick(param) {
   let clicked = "btn-click";
   let unclicked = "btn-unclick";
-  
+
   if (param.classList.contains(unclicked)) {
     param.classList.remove(unclicked);
     param.classList.add(clicked);
@@ -65,26 +65,25 @@ function AddComment(comment, post) {
   commentList = document.querySelector(post + " .CommentList");
   console.log("CommentList: ", commentList);
   let commentEl = document.createElement("li");
-
-  let test = "dede ${userName}";
+  
   commentEl.innerHTML =
-    '<div class="Comentario"> \
-                      <div class="UserId"> \
-                        <div class="UserAvatar">  \
-                          <img\
-                            src="{0}" \
-                            width="20" \
-                            align="left" \
-                          /> \
-                        </div> \
-                        <p class="ComenUser"> \
-                      <a href="#"> \
-                        {1} \
-                      </a> \
-                    </p> \
-                        <p class="ComenCont">{2}</p> \
-                      </div> \
-                    </div>'.format(
+    '<div class="Comentario">\
+        <a href="#">\
+          <div class="UserId">\
+            <div class="UserAvatar">\
+              <img\
+                src="{0}"\
+                width="20" align="left" />\
+            </div>\
+            <p class="ComenUser">\
+              {1}\
+            </p>\
+          </div>\
+        </a>\
+        <div class="ComenCont">\
+          <p>{2}</p>\
+        </div>\
+      </div>'.format(
       userImg,
       userName,
       comment

@@ -58,12 +58,23 @@ a:hover {
 }
 
 .Comentario .UserId {
-    width: 40rem;
+    width: auto;
+    float: left;
 }
 
 .ComenCont {
+    width: auto;
+    float: left;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.ComenCont p {
     font-weight: normal;
     font-size: 9px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 .ComenUser {
