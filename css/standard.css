@@ -1,0 +1,17 @@
+body {
+    background-image: url(/src/img/fundo.svg);
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+    bottom: 0;
+    margin: 0;
+    height: 75px;
+    padding-top: 50vh;
+}
+

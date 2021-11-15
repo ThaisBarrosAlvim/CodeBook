@@ -1,0 +1,86 @@
+/* Logon */
+
+/* Logo */
+
+#Logo {
+    display: table;
+    margin: 2.7rem auto;
+    background-color: #FF6C6C;
+    padding: 0.6rem 0.7rem;
+    border-radius: 35px;
+}
+
+#Logo h1 {
+    font-size: 36px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: normal;
+    color: #404E5C;
+}
+
+header {
+    width: 100%
+}
+
+/* LogonForm */
+
+@media (min-width: 800px) {
+    #FormBox {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) {
+    #FormBox {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #FormBox {
+        width: 40%;
+    }
+}
+
+@media (max-width: 800px) {
+    #FormBox {
+        width: 80%;
+    }
+}
+
+#FormBox {
+    margin: 0 auto;
+    background-color: #E8E8E8;
+    padding: 2rem 2rem;
+    border-radius: 22px;
+}
+
+#FormLabel {
+    text-align: center;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    color: #404E5C;
+}
+
+#FormSubmit {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#SignUp {
+    padding-top: 0.6rem;
+}
+
+#SignUp a {
+    color: #9D9D9D;
+}
+
+#FormBox button {
+    box-sizing: border-box;
+    background-color: #FF6C6C;
+    border: 0;
+    padding: 2% 30%;
+    font-size: large;
+    font-weight: bold;
+    color: #404E5C;
+    border-radius: 35px;
+}
