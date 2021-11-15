@@ -1,5 +1,6 @@
 body {
-    background-image: url(/src/img/fundo.svg);
+    background-color: #404E5C;
+    height: 100vh;
 }
 
 a {
@@ -13,4 +14,3 @@ a {
     height: 75px;
     padding-top: 50vh;
 }
-

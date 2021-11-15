@@ -1,12 +1,11 @@
-String.prototype.format = String.prototype.format = function () {
-  var s = this,
-    i = arguments.length;
+const languages = [
+  ["Python", "src/img/python.png"],
+  ["Javascript", "src/img/js-logo.png"],
+  ["Ruby", "src/img/ruby-logo.png"],
+  ["CSS", "src/img/css-logo.png"],
+  ["HTML", "src/img/html-logo.png"],
+];
 
-  while (i--) {
-    s = s.replace(new RegExp("\\{" + i + "\\}", "gm"), arguments[i]);
-  }
-  return s;
-};
 
 const UserName = "Markinhos";
 const UserPicture =
@@ -19,6 +18,10 @@ function getUserName() {
 
 function getUserImg() {
   return UserPicture;
+}
+
+function getLanguageImg(index) {
+  return languages[index];
 }
 
 // Like Button
@@ -47,7 +50,7 @@ function ActivateClick(element) {}
 
 function PostSubmit(param) {
   console.log("Clicked on Post button");
-  let postId = "#" + param.classList[1];
+  let postId = getPostId(param);
   let commentEl = document.querySelector(postId + " .card-footer input");
   if (commentEl.value) {
     console.log("Processando comentario: " + commentEl.value);
@@ -58,36 +61,39 @@ function PostSubmit(param) {
   }
 }
 
-function AddComment(comment, post) {
-  userName = getUserName();
-  userImg = getUserImg();
+function getPostId(param) {
+  return (
+    "#" +
+    param.parentElement.parentElement.parentElement.parentElement.parentElement
+      .id
+  );
+}
 
-  commentList = document.querySelector(post + " .CommentList");
+function AddComment(comment, post) {
+  let userName = getUserName();
+  let userImg = getUserImg();
+
+  let commentList = document.querySelector(post + " .CommentList");
   console.log("CommentList: ", commentList);
   let commentEl = document.createElement("li");
-  
-  commentEl.innerHTML =
-    '<div class="Comentario">\
-        <a href="#">\
-          <div class="UserId">\
-            <div class="UserAvatar">\
-              <img\
-                src="{0}"\
-                width="20" align="left" />\
-            </div>\
-            <p class="ComenUser">\
-              {1}\
-            </p>\
-          </div>\
-        </a>\
-        <div class="ComenCont">\
-          <p>{2}</p>\
-        </div>\
-      </div>'.format(
-      userImg,
-      userName,
-      comment
-    );
+
+  commentEl.innerHTML = `<div class="Comentario">
+        <a href="#">
+          <div class="UserId">
+            <div class="UserAvatar">
+              <img
+                src="${userImg}"
+                width="20" align="left" />
+            </div>
+            <p class="ComenUser">
+              ${userName}
+            </p>
+          </div>
+        </a>
+        <div class="ComenCont">
+          <p>${comment}</p>
+        </div>
+      </div>`;
 
   commentList.append(commentEl);
 }
