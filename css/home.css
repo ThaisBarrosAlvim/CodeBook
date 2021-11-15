@@ -5,8 +5,6 @@
 
 /* Background img */
 
-
-
 /* Content */
 
 #content {
@@ -17,12 +15,15 @@
     margin-right: auto;
 }
 
+#Posts {
+    background-color: #404E5C;
+}
+
 header {
     -webkit-box-flex: 1;
     -webkit-box-align: end;
     flex-grow: 1;
     z-index: 3;
-
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     border: 0 solid black;
@@ -64,6 +65,7 @@ header {
 nav {
     align-items: flex-start;
 }
+
 .sideMenuOption {
     display: flex;
     flex-direction: row;
@@ -92,6 +94,7 @@ nav {
     width: 43px;
     align-self: left;
 }
+
 .sideMenuOption .UserAvatarMenu {
     background: white;
     border-radius: 20px;
@@ -108,10 +111,15 @@ nav {
 }
 
 #sideMenuPostButton {
-
     width: 193px;
     height: 57px;
-    background: #FF6C6C;
+    box-sizing: border-box;
+    background-color: #FF6C6C;
+    border: 0;
+    padding: 2% 30%;
+    font-size: larger;
+    font-weight: bolder;
+    color: #404E5C;
     border-radius: 35px;
 }
 
@@ -119,6 +127,7 @@ main {
     flex-grow: 1;
     display: flex;
 }
+
 #mainContent {
     display: flex;
 }
@@ -133,10 +142,11 @@ main {
     border-bottom: 0px;
     border-color: #E8E8E8;
     overflow-y: scroll;
+    overflow-x: hidden;
     flex-shrink: 1;
 }
 
-#feedHeader{
+#feedHeader {
     height: 60px;
     border-style: solid;
     border-bottom-width: 1px;
@@ -146,11 +156,12 @@ main {
     border-color: #E8E8E8;
     top: -0.5px;
     position: sticky;
-    z-index: 3;        
+    z-index: 3;
+    background-color: #404E5C;
 }
 
 #feedHeader span {
-    margin-left: 25px;  
+    margin-left: 25px;
     font-family: Alef;
     font-style: normal;
     font-weight: bold;
@@ -159,14 +170,9 @@ main {
     color: #E8E8E8;
 }
 
-#feedContent {
-    height: 100vh;
-    background: #404E5C;
-}
 #sideBarColumn {
     width: 350px;
 }
-
 
 .Post a {
     color: inherit;
@@ -182,9 +188,9 @@ main {
 }
 
 #PostContent {
-    width: 100%;
+    width: 20%;
     display: inline-block;
-    padding-left: 50vh;
+    padding-left: 0vh;
     margin-top: auto;
     padding-right: 50vh;
 }
@@ -452,7 +458,7 @@ li {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     background: #404E5C;
-    width: 8rem;
+    width: 9rem;
     height: 2.5rem;
 }
 
@@ -462,6 +468,7 @@ li {
     margin-left: 0.7rem;
     margin-top: 0.2rem;
     height: auto;
+    padding-right: 0.2rem;
 }
 
 .language-box p {
@@ -531,4 +538,3 @@ li {
 #createPost .form-select {
     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>");
 }
-
