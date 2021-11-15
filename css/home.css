@@ -77,7 +77,6 @@ nav {
 }
 
 .sideMenuOption .sideMenuText span {
-    font-family: Alef;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -150,8 +149,7 @@ main {
 }
 
 #feedHeader span {
-    margin-left: 25px;  
-    font-family: Alef;
+    margin-left: 25px;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
@@ -164,9 +162,64 @@ main {
     background: #404E5C;
 }
 #sideBarColumn {
-    width: 350px;
+    width: 400px;
+    display: flex;
+    left: 40px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 
+#searchInputDiv {
+    height: 34px;
+    width: 335px;
+    margin-top: 47px;
+    border-radius: 35px;
+    background-color: #E8E8E8;
+    display: flex;
+    padding: 0px 13px;
+    align-items: center;
+}
+
+#searchIcon {
+    width: 25px;
+    height: 12px;
+}
+
+#searchInput {
+    padding-left: 10px;
+    background-color: #E8E8E8;
+    border: unset;
+    outline: unset;
+    width: 100%;
+}
+
+#topLanguages {
+    margin: 83px auto;
+}
+
+#topLanguages span{
+    color: #E8E8E8;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#tableTopLanguages span{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 94.5%;
+    color: #FFFFFF;
+}
+
+#sideBarFooter {
+    color: #BFBFBF;
+}
 
 .Post a {
     color: inherit;
