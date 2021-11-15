@@ -6,7 +6,8 @@
 /* Background img */
 
 body {
-    background-image: url(/src/img/fundo.svg)
+    background-image: url(/src/img/fundo.svg);
+    background-size: cover;
 }
 
 .Post a {
@@ -375,4 +376,70 @@ li {
 
 #createPost .form-select {
     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>");
+}
+
+/* Logon */
+
+/* Logo */
+
+#Logo {
+    display: table;
+    margin: 2.7rem auto;
+    background-color: #FF6C6C;
+    padding: 0.6rem 0.7rem;
+    border-radius: 35px;
+}
+
+#Logo h1 {
+    font-size: 36px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: normal;
+    color: #404E5C;
+}
+
+header {
+    width: 100%
+}
+
+/* LogonForm */
+
+#LogonBox {
+    width: 25%;
+    margin: 0 auto;
+    background-color: #E8E8E8;
+    padding: 2rem 2rem;
+    border-radius: 22px;
+}
+
+#FormLabel {
+    text-align: center;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    color: #404E5C;
+}
+
+#FormSubmit {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#SignUp {
+    padding-top: 0.6rem;
+}
+
+#SignUp a {
+    color: #9D9D9D;
+    text-decoration: none;
+}
+
+#LogonBox button {
+    box-sizing: border-box;
+    top: 50%;
+    background-color: #FF6C6C;
+    border: 0;
+    padding: 0.9rem 6rem;
+    font-size: large;
+    font-weight: bold;
+    color: #404E5C;
+    border-radius: 35px;
 }
