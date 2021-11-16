@@ -83,7 +83,7 @@ function AddPost(languageId) {
                       <div class="card-body">
                 
                         <div class="PostImage">
-                          <img class="card-img-top" src="src/img/Imagem post.png" alt="Card image cap" height="476" width="295" />
+                          <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap" height="476" width="295" />
                         </div>
                 
                         <div class="PostIcons">
@@ -158,5 +158,6 @@ function AddPost(languageId) {
                     </div>
                   </article>`;
   let posts = document.getElementById("Posts");
-  posts.append(postLi);
+  postLi.setAttribute("id","post" + (posts.childElementCount + 1))
+  posts.insertBefore(postLi, posts.firstChild)
 }
