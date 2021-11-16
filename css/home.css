@@ -62,14 +62,10 @@ header {
     margin-bottom: 88px;
 }
 
-nav {
-    align-items: flex-start;
-}
-
 .sideMenuOption {
     display: flex;
     flex-direction: row;
-    padding: 12px;
+    padding: 14px;
     align-items: center;
 }
 
@@ -85,6 +81,11 @@ nav {
     line-height: 23px;
     letter-spacing: 0em;
     text-align: left;
+    color: #E8E8E8;
+}
+
+#homeText {
+    color: #FF6C6C;
 }
 
 .sideMenuOption .UserAvatarMenu img {
@@ -106,24 +107,27 @@ nav {
 }
 
 #sideMenuPostButtonDiv {
-    width: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 #sideMenuPostButton {
     width: 193px;
     height: 57px;
-    box-sizing: border-box;
     background-color: #FF6C6C;
     border: 0;
-    padding: 2% 30%;
     font-size: larger;
     font-weight: bolder;
     color: #404E5C;
     border-radius: 35px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
 }
 
 main {
-    flex-grow: 1;
+    flex-grow: 0.5;
     display: flex;
 }
 
@@ -145,6 +149,10 @@ main {
     flex-shrink: 1;
 }
 
+#feed::-webkit-scrollbar {
+    display: none;
+  }
+
 #feedHeader {
     height: 60px;
     border-style: solid;
@@ -157,9 +165,14 @@ main {
     position: sticky;
     z-index: 3;
     background-color: #404E5C;
+    display: flex;
+    align-items: center;
 }
 
 #feedHeader span {
+    height: 100%;
+    display: flex;
+    align-items: center;
     margin-left: 25px;
     font-style: normal;
     font-weight: bold;
@@ -171,7 +184,6 @@ main {
 #sideBarColumn {
     width: 400px;
     display: flex;
-    left: 40px;
     position: relative;
     flex-direction: column;
     align-items: center;
@@ -222,6 +234,10 @@ main {
     font-size: 14px;
     line-height: 94.5%;
     color: #FFFFFF;
+}
+
+#tableTopLanguages {
+    margin-top: 29px;
 }
 
 #sideBarFooter {
