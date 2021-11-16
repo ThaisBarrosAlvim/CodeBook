@@ -151,7 +151,7 @@ main {
 
 #feed::-webkit-scrollbar {
     display: none;
-  }
+}
 
 #feedHeader {
     height: 60px;
@@ -218,7 +218,7 @@ main {
     margin: 83px auto;
 }
 
-#topLanguages span{
+#topLanguages span {
     color: #E8E8E8;
     font-size: 28px;
     font-style: normal;
@@ -228,7 +228,7 @@ main {
     text-align: left;
 }
 
-#tableTopLanguages span{
+#tableTopLanguages span {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -410,6 +410,14 @@ li {
     border-radius: 50%;
 }
 
+.Comentario .UserAvatar img {
+    width: 20px;
+}
+
+.card-header .UserAvatar img {
+    width: 35px;
+}
+
 .UserId .UserAvatar {
     background: white;
     border-radius: 20px;
@@ -423,7 +431,7 @@ li {
 }
 
 .UserId h1 {
-    font-size:medium;
+    font-size: medium;
     font-weight: bold;
     padding: 10px;
     margin: 0px;
