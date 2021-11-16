@@ -64,7 +64,7 @@ function AddPost(languageId) {
                                 src="${userImgPath}"
                                 width="35" align="left" />
                             </div>
-                            <p>${userName}</p>
+                            <h1>${userName}</h1>
                           </div>
                         </a>
                 
