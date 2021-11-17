@@ -10,7 +10,6 @@
 #content {
     display: flex;
     height: 100vh;
-    max-width: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -92,7 +91,6 @@ header {
     display: block;
     border-radius: 50%;
     width: 43px;
-    align-self: left;
 }
 
 .sideMenuOption .UserAvatarMenu {
@@ -377,7 +375,6 @@ li {
 
 .Comentinput input {
     border: 0;
-    vertical-align: auto;
     padding: 0.8rem 1rem;
     background-color: #BFBFBF;
     color: #404E5C;
@@ -552,7 +549,6 @@ li {
 
 .language-box p {
     text-align: center;
-    float: center;
     font-weight: bold;
     padding: 0.3rem;
 }
