@@ -14,3 +14,20 @@ a {
     height: 75px;
     padding-top: 50vh;
 }
+
+/* Logo */
+
+#Logo {
+    display: table;
+    margin: 2.7rem auto;
+    background-color: #FF6C6C;
+    padding: 0.6rem 0.7rem;
+    border-radius: 35px;
+}
+
+#Logo h1 {
+    font-size: 36px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: normal;
+    color: #404E5C;
+}

@@ -238,7 +238,37 @@ main {
     margin-top: 29px;
 }
 
+/* Footer  */
+
 #sideBarFooter {
+    color: #BFBFBF;
+    display: inline-block;
+}
+
+#sideBarFooter a {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+
+#Logout a:hover, #sideBarFooter a:hover {
+    font-weight: bold;
+    color: #BFBFBF;
+}
+
+#sideBarFooter a::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* Logout */
+
+#Logout {
+    padding-bottom: 45px;
     color: #BFBFBF;
 }
 
