@@ -18,16 +18,22 @@ a {
     bottom: 0;
     margin: 0;
     height: 75px;
-    padding-top: 50vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: auto;
 }
 
 /* Logo */
 
 #Logo {
     display: table;
-    margin: 2.7rem auto;
     background-color: #FF6C6C;
     padding: 0.6rem 0.7rem;
+    font-size: 36px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: normal;
+    color: #404E5C;
     border-radius: 35px;
 }
 
