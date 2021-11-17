@@ -3,15 +3,11 @@
     box-sizing: border-box;
 }
 
-/* Background img */
-
 /* Content */
 
 #content {
     display: flex;
     height: 100vh;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #Posts {
@@ -19,35 +15,14 @@
 }
 
 header {
-    -webkit-box-flex: 1;
-    -webkit-box-align: end;
     flex-grow: 1;
     z-index: 3;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    border: 0 solid black;
-    box-sizing: border-box;
-    display: flex;
-    flex-basis: auto;
-    flex-direction: column;
     flex-shrink: 0;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    min-height: 0px;
-    min-width: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    position: relative;
 }
 
 #sideMenu {
     width: 275px;
     margin: 0 auto;
-    position: relative;
 }
 
 #siteLogo {
@@ -63,7 +38,6 @@ header {
 
 .sideMenuOption {
     display: flex;
-    flex-direction: row;
     padding: 14px;
     align-items: center;
 }
@@ -182,7 +156,6 @@ main {
 #sideBarColumn {
     width: 400px;
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
