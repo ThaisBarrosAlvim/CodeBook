@@ -1,3 +1,10 @@
+/*
+Autores
+Thaís Barros Alvim - RA: 2020008082 
+Thiago Henrique Cruz de Moura - RA: 2020023875
+*/
+
+// Later will get this variables when load the page in framework or get from API
 const languages = [
   ["Python", "src/img/python.png"],
   ["Javascript", "src/img/js-logo.png"],
@@ -5,7 +12,6 @@ const languages = [
   ["CSS", "src/img/css-logo.png"],
   ["HTML", "src/img/html-logo.png"],
 ];
-
 
 const UserName = "Markinhos";
 const UserPicture =
@@ -25,7 +31,6 @@ function getLanguageImg(index) {
 }
 
 // Like Button
-
 function LikeClick(param) {
   console.log("Clicked on Like button");
   ButtonClick(param);

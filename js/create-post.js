@@ -1,4 +1,11 @@
+/*
+Autores
+Thaís Barros Alvim - RA: 2020008082 
+Thiago Henrique Cruz de Moura - RA: 2020023875
+*/
+
 function PostCreate() {
+  // Create a Post
   console.log("Clicked on Post Create!");
 
   // Check the variables
@@ -21,6 +28,7 @@ function PostCreate() {
 
   //clear the language selector
   document.querySelector("#createPost .form-select").value = -1;
+  // Close modal
   closeOneModal("CreatePostModal");
 }
 
@@ -158,6 +166,6 @@ function AddPost(languageId) {
                     </div>
                   </article>`;
   let posts = document.getElementById("Posts");
-  postLi.setAttribute("id","post" + (posts.childElementCount + 1))
-  posts.insertBefore(postLi, posts.firstChild)
+  postLi.setAttribute("id", "post" + (posts.childElementCount + 1));
+  posts.insertBefore(postLi, posts.firstChild);
 }
