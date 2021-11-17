@@ -38,7 +38,7 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 
 #Content iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 600px;
+    width: 100%;
     height: 400px;
     margin-top: 20px;
 }
