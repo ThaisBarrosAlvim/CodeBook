@@ -7,7 +7,7 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 #Content {
     background-color: #E8E8E8;
     border-radius: 22px;
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     padding: 30px 70px;
     color: #404E5C;
@@ -25,6 +25,7 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 /* GitHub Project */
 
 #GitHubProject {
+    margin-top: 40px;
     display: flex;
     align-items: center;
 }
@@ -37,8 +38,8 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 
 #Content iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     margin-top: 20px;
 }
 
