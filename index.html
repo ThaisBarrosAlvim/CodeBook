@@ -8,9 +8,9 @@
 
   <title>CodeBook Post V1</title>
 
-  <script src="/js/post.js" type="text/javascript" defer></script>
-  <script src="/js/create-post.js" type="text/javascript" defer></script>
-  <script src="/js/home.js" type="text/javascript" defer></script>
+  <script src="/js/post.js" defer></script>
+  <script src="/js/create-post.js" defer></script>
+  <script src="/js/home.js" defer></script>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,8 +32,7 @@
 
 <body>
   <div id="content">
-    <!-- Header -->
-    <header role="banner">
+    <header>
       <!-- Menu -->
       <div id="sideMenu">
         <!-- Logo -->
@@ -89,8 +88,7 @@
           <!-- Modal -->
           <div id="createPost">
             <!-- Modal -->
-            <div class="modal fade" id="CreatePostModal" tabindex="-1"
-              aria-hidden="true">
+            <div class="modal fade" id="CreatePostModal" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content my-post-create-color">
                   <div class="modal-header">
@@ -149,7 +147,7 @@
                             <div class="UserAvatar">
                               <img
                                 src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                width="35" align="left" />
+                                alt="User Avatar" />
                             </div>
                             <h1>Markinhos</h1>
                           </div>
@@ -170,9 +168,7 @@
                       <div class="card-body">
 
                         <div class="PostImage">
-                          <img class="card-img-top"
-                            src="src/img/image-post.png"
-                            alt="Card image cap" height="476" width="295" />
+                          <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap" />
                         </div>
 
                         <div class="PostIcons">
@@ -211,7 +207,7 @@
 
                           <div class="code-snip-btn">
                             <button class="btn-unclick" onclick="CodeSnippedClick(this)">
-                              <svg width="45" height="21" viewBox="0 0 45 21" fill="none"
+                              <svg viewBox="0 0 45 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                   d="M22.4737 20.1011C22.1394 20.1011 21.8051 20.0048 21.5169 19.8128C20.197 18.9284 13.5285 14.2731 11.7736 9.39359C10.8742 6.89008 11.1034 4.50875 12.4183 2.68653C13.6379 1.01452 15.6719 0.0195704 17.8629 0.0195704C19.5626 0.0195704 21.162 0.591364 22.4851 1.65191C23.8103 0.590836 25.4336 0 27.1029 0C29.2885 0 31.323 0.998125 32.5426 2.6696C33.8635 4.49447 34.0938 6.88056 33.1922 9.39465C31.3853 14.4329 24.2324 19.2802 23.4229 19.8165C23.1358 20.0075 22.8053 20.1011 22.4737 20.1011ZM17.8624 3.32179C16.7631 3.32179 15.7591 3.79838 15.1772 4.59603C14.5135 5.51481 14.4365 6.83295 14.9637 8.29972C15.998 11.1761 19.8156 14.4974 22.4764 16.4244C25.044 14.5709 28.9596 11.2021 29.9999 8.30396C30.5298 6.82713 30.4523 5.50476 29.7842 4.58122C29.2013 3.78198 28.1968 3.30275 27.1023 3.30275C25.9613 3.30275 24.8381 3.84598 24.0205 4.79438L23.7745 5.07949C23.4522 5.45028 22.9803 5.6645 22.4829 5.6645C22.4802 5.6645 22.4786 5.6645 22.4758 5.6645C21.9758 5.66292 21.5022 5.44446 21.182 5.06944L20.9425 4.78804C20.1152 3.83223 19.0468 3.32179 17.8624 3.32179Z"
@@ -241,7 +237,7 @@
                                   <div class="UserAvatar">
                                     <img
                                       src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                      width="20" align="left" alt="User Avatar"/>
+                                      alt="User Avatar" />
                                   </div>
                                   <p class="ComenUser">
                                     Markinhos
@@ -265,7 +261,7 @@
                                   <div class="UserAvatar">
                                     <img
                                       src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                      width="20" align="left" />
+                                      alt="User Avatar" />
                                   </div>
                                   <p class="ComenUser">
                                     Markinhos
@@ -301,20 +297,20 @@
                 <li id="post2">
                   <article class="Post">
                     <div class="card text-center text-white m-5 my-post" style="width: 43rem">
-                
+
                       <div class="card-header">
-                
+
                         <a href="#">
                           <div class="UserId">
                             <div class="UserAvatar">
                               <img
                                 src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                width="35" align="left" alt="User Avatar" />
+                                alt="User Avatar" />
                             </div>
                             <h1>Markinhos</h1>
                           </div>
                         </a>
-                
+
                         <a href="#">
                           <div class="language-id">
                             <div class="language-box">
@@ -323,22 +319,24 @@
                             </div>
                           </div>
                         </a>
-                
+
                       </div>
-                
-                
+
+
                       <div class="card-body">
-                
+
                         <div class="PostImage">
-                          <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap" height="476" width="295" />
+                          <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap"
+                            />
                         </div>
-                
+
                         <div class="PostIcons">
-                
+
                           <div class="like-button">
                             <button class="btn-unclick" onclick="LikeClick(this)">
-                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000"
+                                enable-background="new 0 0 1000 1000" xml:space="preserve">
                                 <g>
                                   <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
                                     <path
@@ -350,11 +348,12 @@
                               </svg>
                             </button>
                           </div>
-                
+
                           <div class="share-btn">
                             <button class="btn-unclick" onclick="ShareClick()">
-                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000"
+                                enable-background="new 0 0 1000 1000" xml:space="preserve">
                                 <g>
                                   <path
                                     d="M464.1,161.2H180.6c-39.6,0-75-2.8-75,37.3v567.6c0,40.1,32.1,72.6,71.7,72.6H751c39.6,0,71.7-32.5,71.7-72.6V621h95.6v242c0,40.1-32.1,72.6-71.7,72.6H81.7C42.1,935.6,10,903.1,10,863V137c0-40.1,32.1-72.6,71.7-72.6h382.4V161.2z" />
@@ -364,10 +363,11 @@
                               </svg>
                             </button>
                           </div>
-                
+
                           <div class="code-snip-btn">
                             <button class="btn-unclick" onclick="CodeSnippedClick(this)">
-                              <svg width="45" height="21" viewBox="0 0 45 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg viewBox="0 0 45 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                   d="M22.4737 20.1011C22.1394 20.1011 21.8051 20.0048 21.5169 19.8128C20.197 18.9284 13.5285 14.2731 11.7736 9.39359C10.8742 6.89008 11.1034 4.50875 12.4183 2.68653C13.6379 1.01452 15.6719 0.0195704 17.8629 0.0195704C19.5626 0.0195704 21.162 0.591364 22.4851 1.65191C23.8103 0.590836 25.4336 0 27.1029 0C29.2885 0 31.323 0.998125 32.5426 2.6696C33.8635 4.49447 34.0938 6.88056 33.1922 9.39465C31.3853 14.4329 24.2324 19.2802 23.4229 19.8165C23.1358 20.0075 22.8053 20.1011 22.4737 20.1011ZM17.8624 3.32179C16.7631 3.32179 15.7591 3.79838 15.1772 4.59603C14.5135 5.51481 14.4365 6.83295 14.9637 8.29972C15.998 11.1761 19.8156 14.4974 22.4764 16.4244C25.044 14.5709 28.9596 11.2021 29.9999 8.30396C30.5298 6.82713 30.4523 5.50476 29.7842 4.58122C29.2013 3.78198 28.1968 3.30275 27.1023 3.30275C25.9613 3.30275 24.8381 3.84598 24.0205 4.79438L23.7745 5.07949C23.4522 5.45028 22.9803 5.6645 22.4829 5.6645C22.4802 5.6645 22.4786 5.6645 22.4758 5.6645C21.9758 5.66292 21.5022 5.44446 21.182 5.06944L20.9425 4.78804C20.1152 3.83223 19.0468 3.32179 17.8624 3.32179Z"
                                   fill="black" />
@@ -380,66 +380,66 @@
                               </svg>
                             </button>
                           </div>
-                
+
                         </div>
-                
+
                         <br />
                         <br />
-                
+
                         <ol class="CommentList">
-                
+
                           <li>
                             <div class="Comentario">
-                
+
                               <a href="#">
                                 <div class="UserId">
                                   <div class="UserAvatar">
                                     <img
                                       src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                      width="20" align="left" alt="User Avatar"/>
+                                      alt="User Avatar" />
                                   </div>
                                   <p class="ComenUser">
                                     Markinhos
                                   </p>
                                 </div>
                               </a>
-                
-                
+
+
                               <div class="ComenCont">
                                 <p>Comentario 1</p>
                               </div>
-                
+
                             </div>
                           </li>
-                
+
                           <li>
                             <div class="Comentario">
-                
+
                               <a href="#">
                                 <div class="UserId">
                                   <div class="UserAvatar">
                                     <img
                                       src="https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg"
-                                      width="20" align="left" alt="User Avatar" />
+                                      alt="User Avatar" />
                                   </div>
                                   <p class="ComenUser">
                                     Markinhos
                                   </p>
                                 </div>
                               </a>
-                
-                
+
+
                               <div class="ComenCont">
                                 <p>Comentario 2</p>
                               </div>
-                
+
                             </div>
                           </li>
-                
+
                         </ol>
                       </div>
-                
-                
+
+
                       <div class="card-footer my-footer-color">
                         <div class="Comentinput">
                           <input class="UserComment" type="text" placeholder="Add a comment..." />
@@ -448,11 +448,11 @@
                           </button>
                         </div>
                       </div>
-                
+
                     </div>
                   </article>
                 </li>
-                
+
               </ol>
             </div>
           </div>
@@ -462,7 +462,7 @@
         <div id="sideBarColumn">
           <!-- Search Input (It will call the API endpoint) -->
           <div id="searchInputDiv">
-            <img id="searchIcon" src="src/img/searchIcon.svg" alt="Search Icon"/>
+            <img id="searchIcon" src="src/img/searchIcon.svg" alt="Search Icon" />
             <input id="searchInput" type="text" placeholder="Search Post" />
           </div>
           <div id="topLanguages">
@@ -472,27 +472,13 @@
                 <tr>
                   <td>
                     <div class="dataLanguage">
-                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon"/>
+                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon" />
                       <span>Python</span>
                     </div>
                   </td>
                   <td>
                     <div class="dataLanguage">
-                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon"/>
-                      <span>Python</span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="dataLanguage">
-                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon"/>
-                      <span>Python</span>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="dataLanguage">
-                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon"/>
+                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon" />
                       <span>Python</span>
                     </div>
                   </td>
@@ -500,7 +486,21 @@
                 <tr>
                   <td>
                     <div class="dataLanguage">
-                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon"/>
+                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon" />
+                      <span>Python</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="dataLanguage">
+                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon" />
+                      <span>Python</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="dataLanguage">
+                      <img class="languageIcon" src="src/img/python.png" alt="Python Icon" />
                       <span>Python</span>
                     </div>
                   </td>
@@ -518,7 +518,7 @@
         </div>
       </div>
     </main>
-</div>
+  </div>
 
 </body>
 
