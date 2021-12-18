@@ -17,14 +17,26 @@ window.onload = function getUserByFetch(){
     });
 }
 
-function getFeedByFetch(){
+function getFeedByFetch(option){
+  feedParams = {};
+
+  if (option === 'Home'){
+    feedParams = {user: User.id};
+  } else if (option === 'Profile'){
+    feedParams = {user: User.id, profile: 1};
+  } else if (option === 'Code Snippets'){
+    feedParams = {user: User.id, snip: 1};
+  }
+
   var url = new URL("http://127.0.0.1:8000/code-book/api/feed"),
-    params = {user: User.id}
+    params = feedParams
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
   fetch(url)
   .then((resp) => resp.json())
   .then((json) => {
-    json.data.forEach((element) => {
+    let posts = document.getElementById("Posts");
+    posts.innerHTML = '';
+    json.forEach((element) => {
       let postLiFeed = document.createElement("li");
       postLiFeed.innerHTML = `<article class="Post">
                         <div class="card text-center text-white m-5 my-post" style="width: 43rem">
@@ -35,18 +47,18 @@ function getFeedByFetch(){
                               <div class="UserId">
                                 <div class="UserAvatar">
                                   <img
-                                    src="${userImgPath}"
+                                    src="${element.creator.profile_image}"
                                     width="35" align="left" />
                                 </div>
-                                <h1>${userName}</h1>
+                                <h1>${element.creator.username}</h1>
                               </div>
                             </a>
                     
                             <a href="#">
                               <div class="language-id">
                                 <div class="language-box">
-                                  <img src="${languageImg[1]}" alt="${languageImg[0]} Icon" />
-                                  <p>${languageImg[0]}</p>
+                                  <img src="${element.language.icon}" alt="${element.language.name} Icon" />
+                                  <p>${element.language.name}</p>
                                 </div>
                               </div>
                             </a>
@@ -57,7 +69,7 @@ function getFeedByFetch(){
                           <div class="card-body">
                     
                             <div class="PostImage">
-                              <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap" />
+                              <img class="card-img-top" src="${element.image}" alt="Card image cap" />
                             </div>
                     
                             <div class="PostIcons">
@@ -130,7 +142,10 @@ function getFeedByFetch(){
                           </div>
                     
                         </div>
-                      </article>`;      
+                      </article>`;
+          
+      postLiFeed.setAttribute("id", "post" + (posts.childElementCount + 1));
+      posts.insertBefore(postLiFeed, posts.firstChild);      
     });
   })
 }
@@ -138,5 +153,5 @@ function getFeedByFetch(){
 function updateFeedHeader(option) {
   let feedHeader = document.getElementById("feedHeader");
   feedHeader.children[0].innerText = option;
-  getFeedByFetch();
+  getFeedByFetch(option);
 }
