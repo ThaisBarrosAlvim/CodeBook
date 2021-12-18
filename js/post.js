@@ -3,7 +3,6 @@ Autores
 Thaís Barros Alvim - RA: 2020008082 
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
-var Debug = null
 // Like Button
 async function LikeClick(param) {
   postID =
@@ -86,7 +85,28 @@ function AddComment(comment, post) {
 }
 
 
-function CodeSnippedClick(param) {
+async function CodeSnippedClick(param) {
+  postID =
+    param.parentElement.parentElement.parentElement.parentElement.parentElement
+      .parentElement.id;
+  postIdAPI = parseInt(postID.split("-")[1]);
+
   console.log("Clicked on CodeSnipped button");
+  let resp = await fetch("http://127.0.0.1:8000/code-book/api/click_snip", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      post: postIdAPI,
+      user: User.id,
+    }),
+  })
+    .then((resp) => {
+      return resp;
+    })
+    .catch((e) => console.log("ERRO12" + e));
+
+  console.log(await resp);
   ButtonClick(param);
 }
