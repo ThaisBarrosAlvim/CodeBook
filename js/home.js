@@ -69,25 +69,21 @@ function getFeedByFetch() {
                     
                           <div class="card-header">
                     
-                            <a href="#">
-                              <div class="UserId">
-                                <div class="UserAvatar">
-                                  <img
-                                    src="${element.creator.profile_image}"
-                                    width="35" align="left" />
-                                </div>
-                                <h1>${element.creator.username}</h1>
+                            <div class="UserId">
+                              <div class="UserAvatar">
+                                <img
+                                  src="${element.creator.profile_image}"
+                                  width="35" align="left" />
                               </div>
-                            </a>
+                              <h1>${element.creator.username}</h1>
+                            </div>
                     
-                            <a href="#">
-                              <div class="language-id">
-                                <div class="language-box">
-                                  <img src="${element.language.icon}" alt="${element.language.name} Icon" />
-                                  <p>${element.language.name}</p>
-                                </div>
+                            <div class="language-id">
+                              <div class="language-box">
+                                <img src="${element.language.icon}" alt="${element.language.name} Icon" />
+                                <p>${element.language.name}</p>
                               </div>
-                            </a>
+                            </div>
                     
                           </div>
                     
