@@ -58,8 +58,8 @@ function PostSubmit(param) {
   let postId = getPostId(param);
   let commentEl = document.querySelector(postId + " .card-footer input");
   if (commentEl.value) {
-    console.log("Processando comentario: " + commentEl.value);
-    AddComment(commentEl.value, postId);
+    postIdConverted = parseInt(postId.split("-")[1])
+    AddComment(commentEl.value, postIdConverted);
     commentEl.value = null;
   } else {
     return;
@@ -75,32 +75,19 @@ function getPostId(param) {
 }
 
 function AddComment(comment, post) {
-  let userName = getUserName();
-  let userImg = getUserImg();
+  fetch("http://127.0.0.1:8000/code-book/api/create_comment", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      creator: User.id,
+      text: comment,
+      post: post,
+    }),
+  })
 
-  let commentList = document.querySelector(post + " .CommentList");
-  console.log("CommentList: ", commentList);
-  let commentEl = document.createElement("li");
-
-  commentEl.innerHTML = `<div class="Comentario">
-        <a href="#">
-          <div class="UserId">
-            <div class="UserAvatar">
-              <img
-                src="${userImg}"
-                width="20" align="left" />
-            </div>
-            <p class="ComenUser">
-              ${userName}
-            </p>
-          </div>
-        </a>
-        <div class="ComenCont">
-          <p>${comment}</p>
-        </div>
-      </div>`;
-
-  commentList.append(commentEl);
+  getFeedByFetch();
 }
 
 function ShareClick() {

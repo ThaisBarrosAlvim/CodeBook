@@ -155,8 +155,33 @@ function getFeedByFetch() {
                         </div>
                       </article>`;
 
-        postLiFeed.setAttribute("id", "post" + (posts.childElementCount + 1));
+        postLiFeed.setAttribute("id", "post-" + (element.id));
         posts.insertBefore(postLiFeed, posts.firstChild);
+
+        element.comments.forEach((comment) => {
+          let commentList = postLiFeed.querySelector(".CommentList");
+          let commentEl = document.createElement("li");
+
+          commentEl.innerHTML = `<div class="Comentario">
+                <a href="#">
+                  <div class="UserId">
+                    <div class="UserAvatar">
+                      <img
+                        src="${comment.creator.profile_image}"
+                        width="20" align="left" />
+                    </div>
+                    <p class="ComenUser">
+                      ${comment.creator.username}
+                    </p>
+                  </div>
+                </a>
+                <div class="ComenCont">
+                  <p>${comment.text}</p>
+                </div>
+              </div>`;
+
+          commentList.append(commentEl);
+        })
       });
     });
 }
