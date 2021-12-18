@@ -49,6 +49,21 @@ function getFeedByFetch() {
       posts.innerHTML = "";
       json.forEach((element) => {
         let postLiFeed = document.createElement("li");
+        let like = element.liked;
+        let snip = element.spipped;
+
+        if (like === true){
+          likeClass = 'btn-click'
+        } else {
+          likeClass = 'btn-unclick'
+        }
+
+        if (snip === true){
+          snipClass = 'btn-click'
+        } else {
+          snipClass = 'btn-unclick'
+        }
+
         postLiFeed.innerHTML = `<article class="Post">
                         <div class="card text-center text-white m-5 my-post" style="width: 43rem">
                     
@@ -86,7 +101,7 @@ function getFeedByFetch() {
                             <div class="PostIcons">
                     
                               <div class="like-button">
-                                <button class="btn-unclick" onclick="LikeClick(this)">
+                                <button class="${likeClass}" onclick="LikeClick(this)">
                                   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                     y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
                                     <g>
@@ -102,7 +117,7 @@ function getFeedByFetch() {
                               </div>
                     
                               <div class="code-snip-btn">
-                                <button class="btn-unclick" onclick="CodeSnippedClick(this)">
+                                <button class="${snipClass}" onclick="CodeSnippedClick(this)">
                                   <svg  viewBox="0 0 45 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                       d="M22.4737 20.1011C22.1394 20.1011 21.8051 20.0048 21.5169 19.8128C20.197 18.9284 13.5285 14.2731 11.7736 9.39359C10.8742 6.89008 11.1034 4.50875 12.4183 2.68653C13.6379 1.01452 15.6719 0.0195704 17.8629 0.0195704C19.5626 0.0195704 21.162 0.591364 22.4851 1.65191C23.8103 0.590836 25.4336 0 27.1029 0C29.2885 0 31.323 0.998125 32.5426 2.6696C33.8635 4.49447 34.0938 6.88056 33.1922 9.39465C31.3853 14.4329 24.2324 19.2802 23.4229 19.8165C23.1358 20.0075 22.8053 20.1011 22.4737 20.1011ZM17.8624 3.32179C16.7631 3.32179 15.7591 3.79838 15.1772 4.59603C14.5135 5.51481 14.4365 6.83295 14.9637 8.29972C15.998 11.1761 19.8156 14.4974 22.4764 16.4244C25.044 14.5709 28.9596 11.2021 29.9999 8.30396C30.5298 6.82713 30.4523 5.50476 29.7842 4.58122C29.2013 3.78198 28.1968 3.30275 27.1023 3.30275C25.9613 3.30275 24.8381 3.84598 24.0205 4.79438L23.7745 5.07949C23.4522 5.45028 22.9803 5.6645 22.4829 5.6645C22.4802 5.6645 22.4786 5.6645 22.4758 5.6645C21.9758 5.66292 21.5022 5.44446 21.182 5.06944L20.9425 4.78804C20.1152 3.83223 19.0468 3.32179 17.8624 3.32179Z"
