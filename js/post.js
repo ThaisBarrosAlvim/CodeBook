@@ -10,7 +10,6 @@ async function LikeClick(param) {
       .parentElement.id;
   postIdAPI = parseInt(postID.split("-")[1]);
 
-
   console.log("Clicked on Like button");
   let resp = await fetch("http://127.0.0.1:8000/code-book/api/click_like", {
     method: "POST",
@@ -44,7 +43,6 @@ function ButtonClick(param) {
   }
 }
 
-
 // Post submit
 
 function PostSubmit(param) {
@@ -52,7 +50,7 @@ function PostSubmit(param) {
   let postId = getPostId(param);
   let commentEl = document.querySelector(postId + " .card-footer input");
   if (commentEl.value) {
-    postIdConverted = parseInt(postId.split("-")[1])
+    postIdConverted = parseInt(postId.split("-")[1]);
     AddComment(commentEl.value, postIdConverted);
     commentEl.value = null;
   } else {
@@ -79,11 +77,10 @@ function AddComment(comment, post) {
       text: comment,
       post: post,
     }),
-  })
+  });
 
   getFeedByFetch();
 }
-
 
 async function CodeSnippedClick(param) {
   postID =
@@ -108,5 +105,8 @@ async function CodeSnippedClick(param) {
     .catch((e) => console.log("ERRO12" + e));
 
   console.log(await resp);
+  if (Context == "Code Snippets") {
+    getFeedByFetch();
+  }
   ButtonClick(param);
 }
