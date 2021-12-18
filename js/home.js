@@ -3,6 +3,7 @@ Autores
 Thaís Barros Alvim - RA: 2020008082 
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
+
 var User = {};
 
 window.onload = function onloadContent(){
@@ -19,6 +20,8 @@ function getUserByFetch(){
       User.password = json.password;
       User.profile_image = json.profile_image;
       User.email = json.email;
+
+      getFeedByFetch('Home');
     });
 }
 
@@ -167,8 +170,14 @@ function getLanguagesByFetch(){
     .then((json) => {
       let tbodyLang = document.getElementById("tbodyTopLanguages");
       tbodyLang.innerHTML = '';
+
+      let selectlanguage = document.getElementById("form-language-select");
+      selectlanguage.innerHTML = '<option value="-1" selected>Select language</option>';
+
       json.forEach((element) => {
         let trLang = document.createElement("tr");
+        let optionLang = document.createElement("option");
+
         trLang.innerHTML = 
           ` <td>
               <div class="dataLanguage">
@@ -179,7 +188,14 @@ function getLanguagesByFetch(){
               </div>
             </td>
             `;
+
         tbodyLang.insertBefore(trLang, tbodyLang.firstChild);
+
+        optionLang.text = element.name;
+        optionLang.value = element.id;
+        
+        selectlanguage.appendChild(optionLang);
+
       });
     });
 }
