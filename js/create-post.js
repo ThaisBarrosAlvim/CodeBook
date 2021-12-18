@@ -4,6 +4,39 @@ Thaís Barros Alvim - RA: 2020008082
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 
+function makePostByFetch(image, creator, language) {
+  fetch("http://127.0.0.1:8000/code-book/api/create_post", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      image: image,
+      creator: creator,
+      language: language,
+    }),
+  })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data));
+}
+
+function createUserByFetch(username, password, profile_image, email) {
+  fetch("http://127.0.0.1:8000/code-book/api/create_user", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+      password: password,
+      email: email,
+    }),
+    mode: 'no-cors',
+  })
+    .then((resp) => resp.json())
+    .then((data) => console.log(data));
+}
+
 function PostCreate() {
   // Create a Post
   console.log("Clicked on Post Create!");
