@@ -30,7 +30,7 @@ async function Login() {
   pass = document.getElementById("InputPassword").value;
   user = document.getElementById("InputUsername").value;
 
-  const resp = await LogUser(user, pass);
+  let resp = await LogUser(user, pass);
   if (resp.ok) {
      window.location.href = "/index.html";
   } else {

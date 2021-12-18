@@ -4,23 +4,26 @@ Thaís Barros Alvim - RA: 2020008082
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 
-function makePostByFetch(image, creator, language) {
-  fetch("http://127.0.0.1:8000/code-book/api/create_post", {
+async function makePostByFetch(image, language) {
+  var data = new FormData();
+  data.append("image", image);
+  data.append("creator", User.id);
+  data.append("language", language);
+
+  let resp = await fetch("http://127.0.0.1:8000/code-book/api/create_post", {
     method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify({
-      image: image,
-      creator: creator,
-      language: language,
-    }),
+    body: data,
   })
-    .then((resp) => resp.json())
-    .then((data) => console.log(data));
+    .then((resp) => {
+      return resp;
+    })
+    .catch((e) => console.log("ERRO12" + e));
+
+  console.log(resp);
+  return resp;
 }
 
-function PostCreate() {
+async function PostCreate() {
   // Create a Post
   console.log("Clicked on Post Create!");
 
@@ -35,17 +38,22 @@ function PostCreate() {
   } else {
     console.log("validou");
   }
-  //Add the post
-  AddPost(languageId.value);
   //handles the file input
   let file = formFile.files[0];
-  //clear the file input
-  formFile.value = "";
-
-  //clear the language selector
-  document.querySelector("#createPost .form-select").value = -1;
-  // Close modal
-  closeOneModal("CreatePostModal");
+  //Add the post
+  let resp = await makePostByFetch(file, languageId.value);
+  if (resp.ok) {
+    AddPost(languageId.value, await resp.json());
+    //clear the file input
+    formFile.value = "";
+    //clear the language selector
+    document.querySelector("#createPost .form-select").value = -1;
+    // Close modal
+    closeOneModal("CreatePostModal");
+  } else {
+    alert("Erro ao postar: " + resp.statusText);
+    return;
+  }
 }
 
 function closeOneModal(modalId) {
@@ -64,15 +72,13 @@ function closeOneModal(modalId) {
   document.body.removeChild(modalBackdrops[0]);
 }
 
-function AddPost(languageId) {
-  let userImgPath = getUserImg();
-  let userName = getUserName();
-  console.log("get languageindex: " + languageId);
+function AddPost(languageId, post) {
+  let userImgPath = User.profile_image;
+  let userName = User.username;
   let languageImg = getLanguageImg(languageId);
 
-  console.log(languageImg);
-  console.log(userName);
-  console.log(userImgPath);
+  console.log(post);
+  console.log(User);
 
   let postLi = document.createElement("li");
 
@@ -107,7 +113,7 @@ function AddPost(languageId) {
                       <div class="card-body">
                 
                         <div class="PostImage">
-                          <img class="card-img-top" src="src/img/image-post.png" alt="Card image cap" />
+                          <img class="card-img-top" src="${post.image}" alt="Card image cap" />
                         </div>
                 
                         <div class="PostIcons">
