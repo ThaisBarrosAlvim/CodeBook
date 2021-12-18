@@ -486,25 +486,6 @@ li {
     width: 2rem;
 }
 
-/* Post Share btn */
-
-.share-btn {
-    float: left;
-    padding-right: 1rem;
-}
-
-.share-btn button {
-    color: transparent;
-    padding-left: 0;
-    background-color: transparent;
-    border: 0;
-    padding-left: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.share-btn svg {
-    width: 2rem;
-}
 
 /* Post Code Snipped btn */
 

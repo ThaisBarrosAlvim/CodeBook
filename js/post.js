@@ -3,36 +3,32 @@ Autores
 Thaís Barros Alvim - RA: 2020008082 
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
-
-// Later will get this variables when load the page in framework or get from API
-const languages = [
-  ["Python", "src/img/python.png"],
-  ["Javascript", "src/img/js-logo.png"],
-  ["Ruby", "src/img/ruby-logo.png"],
-  ["CSS", "src/img/css-logo.png"],
-  ["HTML", "src/img/html-logo.png"],
-];
-
-const UserName = "Markinhos";
-const UserPicture =
-  "https://conteudo.imguol.com.br/c/noticias/21/2019/10/31/ceo-mark-zuckerberg-tem-defendeu-regras-da-plataforma-diante-de-protestos-1572539681496_v2_1x1.jpg";
-
-// Get environment variables
-function getUserName() {
-  return UserName;
-}
-
-function getUserImg() {
-  return UserPicture;
-}
-
-function getLanguageImg(index) {
-  return languages[index];
-}
-
+var Debug = null
 // Like Button
-function LikeClick(param) {
+async function LikeClick(param) {
+  postID =
+    param.parentElement.parentElement.parentElement.parentElement.parentElement
+      .parentElement.id;
+  postIdAPI = parseInt(postID.split("-")[1]);
+
+
   console.log("Clicked on Like button");
+  let resp = await fetch("http://127.0.0.1:8000/code-book/api/click_like", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      post: postIdAPI,
+      user: User.id,
+    }),
+  })
+    .then((resp) => {
+      return resp;
+    })
+    .catch((e) => console.log("ERRO12" + e));
+
+  console.log(await resp);
   ButtonClick(param);
 }
 
@@ -49,7 +45,6 @@ function ButtonClick(param) {
   }
 }
 
-function ActivateClick(element) {}
 
 // Post submit
 
@@ -103,10 +98,6 @@ function AddComment(comment, post) {
   commentList.append(commentEl);
 }
 
-function ShareClick() {
-  console.log("Clicked on Share button");
-  alert("Compartilhar não implementado!");
-}
 
 function CodeSnippedClick(param) {
   console.log("Clicked on CodeSnipped button");
