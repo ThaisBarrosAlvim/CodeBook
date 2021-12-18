@@ -20,6 +20,8 @@ function getUserByFetch(){
       User.password = json.password;
       User.profile_image = json.profile_image;
       User.email = json.email;
+
+      getFeedByFetch('Home');
     });
 }
 
