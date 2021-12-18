@@ -24,8 +24,14 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 
 /* GitHub Project */
 
-#GitHubProject {
+#GitHubProjectFront {
     margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#GitHubProjectBack {
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
