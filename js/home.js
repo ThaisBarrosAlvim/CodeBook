@@ -5,7 +5,12 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 var User = {};
 
-window.onload = function getUserByFetch(){
+window.onload = function onloadContent(){
+  getUserByFetch();
+  getLanguagesByFetch();
+}
+
+function getUserByFetch(){
   fetch("http://127.0.0.1:8000/code-book/api/get_logged")
     .then((resp) => resp.json())
     .then((json) => {
@@ -154,4 +159,27 @@ function updateFeedHeader(option) {
   let feedHeader = document.getElementById("feedHeader");
   feedHeader.children[0].innerText = option;
   getFeedByFetch(option);
+}
+
+function getLanguagesByFetch(){
+  fetch("http://127.0.0.1:8000/code-book/api/languages")
+    .then((resp) => resp.json())
+    .then((json) => {
+      let tbodyLang = document.getElementById("tbodyTopLanguages");
+      tbodyLang.innerHTML = '';
+      json.forEach((element) => {
+        let trLang = document.createElement("tr");
+        trLang.innerHTML = 
+          ` <td>
+              <div class="dataLanguage">
+                <a href="#">
+                  <img class="languageIcon" src="${element.icon}" alt="Python Icon" />
+                  <span>${element.name}</span>
+                </a>
+              </div>
+            </td>
+            `;
+        tbodyLang.insertBefore(trLang, tbodyLang.firstChild);
+      });
+    });
 }
