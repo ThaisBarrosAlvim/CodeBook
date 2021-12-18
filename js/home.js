@@ -6,14 +6,14 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 var User = {};
 
 window.onload = function getUserByFetch(){
-  fetch("http://127.0.0.1:8000/code-book/api/user/1")
+  fetch("http://127.0.0.1:8000/code-book/api/get_logged")
     .then((resp) => resp.json())
     .then((json) => {
-      User.id = json.id
-      User.username = json.username
-      User.password = json.password
-      User.profile_image = json.profile_image
-      User.email = json.email
+      User.id = json.id;
+      User.username = json.username;
+      User.password = json.password;
+      User.profile_image = json.profile_image;
+      User.email = json.email;
     });
 }
 

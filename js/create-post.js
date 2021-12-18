@@ -20,23 +20,6 @@ function makePostByFetch(image, creator, language) {
     .then((data) => console.log(data));
 }
 
-function createUserByFetch(username, password, profile_image, email) {
-  fetch("http://127.0.0.1:8000/code-book/api/create_user", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify({
-      username: username,
-      password: password,
-      email: email,
-    }),
-    mode: 'no-cors',
-  })
-    .then((resp) => resp.json())
-    .then((data) => console.log(data));
-}
-
 function PostCreate() {
   // Create a Post
   console.log("Clicked on Post Create!");
