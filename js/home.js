@@ -3,33 +3,29 @@ Autores
 Thaís Barros Alvim - RA: 2020008082 
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
+var User = {};
 
 window.onload = function getUserByFetch(){
   fetch("http://127.0.0.1:8000/code-book/api/user/1")
     .then((resp) => resp.json())
     .then((json) => {
-      var id = json.id
-      var username = json.username
-      var password = json.password
-      var profile_image = json.profile_image
-      var email = json.email
+      User.id = json.id
+      User.username = json.username
+      User.password = json.password
+      User.profile_image = json.profile_image
+      User.email = json.email
     });
 }
 
 function getFeedByFetch(){
-  fetch("http://127.0.0.1:8000/code-book/api/feed")
-  .then((resp) => {
-    if (resp.ok) {
-      console.log("Sucesso");
-      return resp.json();
-    } else {
-      console.log("ERRO");
-    }
-  })
-  .then((resp) => {
-    resp.data.forEach((element) => {
+  var url = new URL("http://127.0.0.1:8000/code-book/api/feed"),
+    params = {user: User.id}
+  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+  fetch(url)
+  .then((resp) => resp.json())
+  .then((json) => {
+    json.data.forEach((element) => {
       let postLiFeed = document.createElement("li");
-
       postLiFeed.innerHTML = `<article class="Post">
                         <div class="card text-center text-white m-5 my-post" style="width: 43rem">
                     
@@ -142,4 +138,5 @@ function getFeedByFetch(){
 function updateFeedHeader(option) {
   let feedHeader = document.getElementById("feedHeader");
   feedHeader.children[0].innerText = option;
+  getFeedByFetch();
 }
