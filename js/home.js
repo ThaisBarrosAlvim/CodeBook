@@ -5,13 +5,14 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 
 var User = {};
+var Context = "Home";
 
-window.onload = function onloadContent(){
+window.onload = function onloadContent() {
   getUserByFetch();
   getLanguagesByFetch();
-}
+};
 
-function getUserByFetch(){
+function getUserByFetch() {
   fetch("http://127.0.0.1:8000/code-book/api/get_logged")
     .then((resp) => resp.json())
     .then((json) => {
@@ -20,33 +21,35 @@ function getUserByFetch(){
       User.password = json.password;
       User.profile_image = json.profile_image;
       User.email = json.email;
-
-      getFeedByFetch('Home');
+      Context = "Home";
+      getFeedByFetch();
     });
 }
 
-function getFeedByFetch(option){
+function getFeedByFetch() {
   feedParams = {};
 
-  if (option === 'Home'){
-    feedParams = {user: User.id};
-  } else if (option === 'Profile'){
-    feedParams = {user: User.id, profile: 1};
-  } else if (option === 'Code Snippets'){
-    feedParams = {user: User.id, snip: 1};
+  if (Context === "Home") {
+    feedParams = { user: User.id };
+  } else if (Context === "Profile") {
+    feedParams = { user: User.id, profile: 1 };
+  } else if (Context === "Code Snippets") {
+    feedParams = { user: User.id, snip: 1 };
   }
 
   var url = new URL("http://127.0.0.1:8000/code-book/api/feed"),
-    params = feedParams
-  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+    params = feedParams;
+  Object.keys(params).forEach((key) =>
+    url.searchParams.append(key, params[key])
+  );
   fetch(url)
-  .then((resp) => resp.json())
-  .then((json) => {
-    let posts = document.getElementById("Posts");
-    posts.innerHTML = '';
-    json.forEach((element) => {
-      let postLiFeed = document.createElement("li");
-      postLiFeed.innerHTML = `<article class="Post">
+    .then((resp) => resp.json())
+    .then((json) => {
+      let posts = document.getElementById("Posts");
+      posts.innerHTML = "";
+      json.forEach((element) => {
+        let postLiFeed = document.createElement("li");
+        postLiFeed.innerHTML = `<article class="Post">
                         <div class="card text-center text-white m-5 my-post" style="width: 43rem">
                     
                           <div class="card-header">
@@ -151,35 +154,36 @@ function getFeedByFetch(option){
                     
                         </div>
                       </article>`;
-          
-      postLiFeed.setAttribute("id", "post" + (posts.childElementCount + 1));
-      posts.insertBefore(postLiFeed, posts.firstChild);      
+
+        postLiFeed.setAttribute("id", "post" + (posts.childElementCount + 1));
+        posts.insertBefore(postLiFeed, posts.firstChild);
+      });
     });
-  })
 }
 
 function updateFeedHeader(option) {
   let feedHeader = document.getElementById("feedHeader");
   feedHeader.children[0].innerText = option;
-  getFeedByFetch(option);
+  Context = option;
+  getFeedByFetch();
 }
 
-function getLanguagesByFetch(){
+function getLanguagesByFetch() {
   fetch("http://127.0.0.1:8000/code-book/api/languages")
     .then((resp) => resp.json())
     .then((json) => {
       let tbodyLang = document.getElementById("tbodyTopLanguages");
-      tbodyLang.innerHTML = '';
+      tbodyLang.innerHTML = "";
 
       let selectlanguage = document.getElementById("form-language-select");
-      selectlanguage.innerHTML = '<option value="-1" selected>Select language</option>';
+      selectlanguage.innerHTML =
+        '<option value="-1" selected>Select language</option>';
 
       json.forEach((element) => {
         let trLang = document.createElement("tr");
         let optionLang = document.createElement("option");
 
-        trLang.innerHTML = 
-          ` <td>
+        trLang.innerHTML = ` <td>
               <div class="dataLanguage">
                 <a href="#">
                   <img class="languageIcon" src="${element.icon}" alt="Python Icon" />
@@ -193,9 +197,8 @@ function getLanguagesByFetch(){
 
         optionLang.text = element.name;
         optionLang.value = element.id;
-        
-        selectlanguage.appendChild(optionLang);
 
+        selectlanguage.appendChild(optionLang);
       });
     });
 }
