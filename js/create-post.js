@@ -4,6 +4,7 @@ Thaís Barros Alvim - RA: 2020008082
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 
+//Make a post
 async function makePostByFetch(image, language) {
   var data = new FormData();
   data.append("image", image);
@@ -23,8 +24,8 @@ async function makePostByFetch(image, language) {
   return resp;
 }
 
+// Create a Post
 async function PostCreate() {
-  // Create a Post
   console.log("Clicked on Post Create!");
 
   // Check the variables

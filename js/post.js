@@ -66,6 +66,7 @@ function getPostId(param) {
   );
 }
 
+//Function that make the communication with tha api endpoint to add the comment
 function AddComment(comment, post) {
   fetch("http://127.0.0.1:8000/code-book/api/create_comment", {
     method: "POST",
@@ -82,6 +83,7 @@ function AddComment(comment, post) {
   getFeedByFetch();
 }
 
+//Function that communicates with the api endpoint to snipped the post
 async function CodeSnippedClick(param) {
   postID =
     param.parentElement.parentElement.parentElement.parentElement.parentElement

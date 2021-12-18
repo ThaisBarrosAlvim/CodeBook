@@ -7,11 +7,13 @@ Thiago Henrique Cruz de Moura - RA: 2020023875
 var User = {};
 var Context = "Home";
 
+//Load user and languages on the onload of the window
 window.onload = function onloadContent() {
   getUserByFetch();
   getLanguagesByFetch();
 };
 
+//Get the user logged from the api endpoint
 function getUserByFetch() {
   fetch("http://127.0.0.1:8000/code-book/api/get_logged")
     .then((resp) => resp.json())
@@ -26,6 +28,7 @@ function getUserByFetch() {
     });
 }
 
+//Get the  feed from the api endpoint and update it on the page
 function getFeedByFetch() {
   feedParams = {};
 
@@ -183,6 +186,7 @@ function getFeedByFetch() {
     });
 }
 
+//Update the feed header
 function updateFeedHeader(option) {
   let feedHeader = document.getElementById("feedHeader");
   feedHeader.children[0].innerText = option;
@@ -190,6 +194,7 @@ function updateFeedHeader(option) {
   getFeedByFetch();
 }
 
+//Get the languages from the api endpoint
 function getLanguagesByFetch() {
   fetch("http://127.0.0.1:8000/code-book/api/languages")
     .then((resp) => resp.json())

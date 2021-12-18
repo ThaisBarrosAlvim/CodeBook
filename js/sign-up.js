@@ -4,6 +4,7 @@ Thaís Barros Alvim - RA: 2020008082
 Thiago Henrique Cruz de Moura - RA: 2020023875
 */
 
+//Function that communicates with the api endpoint to create the user
 async function CreateUser(name, pass, mail, image) {
   let resp = await fetch("http://127.0.0.1:8000/code-book/api/create_user", {
     method: "POST",
@@ -27,6 +28,7 @@ async function CreateUser(name, pass, mail, image) {
   return resp;
 }
 
+//Calls the function that create the user
 async function SignUp() {
   console.log("SignUp function!");
   pass = document.getElementById("InputPassword").value;
