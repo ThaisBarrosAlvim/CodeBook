@@ -50,7 +50,7 @@ function getFeedByFetch() {
       json.forEach((element) => {
         let postLiFeed = document.createElement("li");
         let like = element.liked;
-        let snip = element.spipped;
+        let snip = element.snipped;
 
         if (like === true){
           likeClass = 'btn-click'
